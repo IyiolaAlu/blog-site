@@ -43,7 +43,7 @@ export const Signup = () => {
       try {
         setloading(true);
         const response = await axios.post(
-          "http://localhost:5006/api/v1/signUp",
+          "https://blog-siteb.onrender.com/api/v1/signUp",
           {
             profilePicture: image || DEFAULT_AVATAR,
             ...values,

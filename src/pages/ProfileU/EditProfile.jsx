@@ -37,7 +37,7 @@ const EditProfile = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.put(
-        "http://localhost:5006/api/v1/update-profile",
+        "https://blog-siteb.onrender.com/api/v1/update-profile",
         { firstName, lastName, profilePicture: image },
         {
           headers: {

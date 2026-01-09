@@ -11,7 +11,7 @@ const Topics = () => {
 
   useEffect(() => {
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:5006/api/posts");
+    const res = await axios.get("https://blog-siteb.onrender.com/api/posts");
     setAllPosts(res.data);
   };
   fetchPosts();

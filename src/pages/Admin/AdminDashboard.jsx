@@ -12,7 +12,7 @@ const AdminDashboard = () => {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:5006/api/posts", {
+      const res = await axios.get("https://blog-siteb.onrender.com/api/posts", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts(res.data.posts || res.data);
@@ -29,7 +29,7 @@ const AdminDashboard = () => {
 
   const handleCreate = async () => {
     try {
-      const res = await axios.post("http://localhost:5006/api/posts", newPost, {
+      const res = await axios.post("https://blog-siteb.onrender.com/api/posts", newPost, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts([res.data.post, ...posts]);
@@ -43,7 +43,7 @@ const AdminDashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
     try {
-      await axios.delete(`http://localhost:5006/api/posts/${id}`, {
+      await axios.delete(`https://blog-siteb.onrender.com/posts/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts(posts.filter((p) => p._id !== id));
@@ -64,7 +64,7 @@ const AdminDashboard = () => {
   const submitEdit = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:5006/api/posts/${editingPost._id}`,
+        `https://blog-siteb.onrender.com/api/posts/${editingPost._id}`,
         editingPost,
         { headers: { Authorization: `Bearer ${token}` } }
       );

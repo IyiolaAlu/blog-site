@@ -25,7 +25,7 @@ export const Login = () => {
         setLoginError("");
 
         const response = await axios.post(
-          "http://localhost:5006/api/v1/login",
+          "https://blog-siteb.onrender.com/api/v1/login",
           values
         );
 

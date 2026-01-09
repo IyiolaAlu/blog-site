@@ -7,7 +7,7 @@ const BlogGrid = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("http://localhost:5006/api/posts");
+      const res = await axios.get("https://blog-siteb.onrender.com/api/posts");
       setPosts(res.data.slice(0, 3)); 
     };
 
