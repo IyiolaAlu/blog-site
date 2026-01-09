@@ -1,0 +1,165 @@
+.custom-navbar {
+    background: #000000 !important;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.custom-brand {
+    color: #3B82F6 !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.custom-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+    color: #3B82F6 !important;
+}
+
+.nav-link.active {
+    color: #3B82F6 !important;
+}
+
+.custom-toggler {
+    border-color: #3B82F6 !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%233B82F6' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Navbar buttons container */
+.nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Login button */
+.btn-login {
+    background: transparent !important;
+    color: #FFFFFF !important;
+    border: 2px solid #3B82F6 !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-login:hover {
+    background: #3B82F6 !important;
+    color: #000000 !important;
+    border-color: #3B82F6 !important;
+}
+
+/* Signup button */
+.btn-signup {
+    background: #3B82F6 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #3B82F6 !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-signup:hover {
+    background: #2563EB !important;
+    border-color: #2563EB !important;
+}
+
+.dropdown-menu {
+    background: #1F2937 !important;
+    border: 1px solid #374151 !important;
+}
+
+.dropdown-item {
+    color: #FFFFFF !important;
+}
+
+.dropdown-item:hover {
+    background: #374151 !important;
+    color: #3B82F6 !important;
+}
+
+.dropdown-divider {
+    border-color: #374151 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #000000;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+    
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    .btn-login, .btn-signup {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* Add these styles to your existing Navbar.css */
+
+.profile-icon-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.2);
+    border: 2px solid #3B82F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3B82F6;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    margin-right: 0.75rem;
+}
+
+.profile-icon:hover {
+    background: rgba(59, 130, 246, 0.3);
+    transform: scale(1.05);
+}
+
+/* Adjust nav-buttons to include profile icon */
+.nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+/* Responsive adjustments for profile icon */
+@media (max-width: 991px) {
+    .nav-buttons {
+        flex-direction: row;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    .profile-icon {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,25 @@
+.about-page {
+  min-height: 100vh;
+  padding: 120px 20px 40px;
+  background: #f9f9f9;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.about-container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-intro {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}

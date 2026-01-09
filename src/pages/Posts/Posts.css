@@ -1,0 +1,103 @@
+.posts-page {
+  padding: 40px 0;
+}
+
+.posts-page.container {
+  padding-top: 100px !important; /* Adjust as needed */
+}
+
+.posts-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  justify-items: center; /* 👈 keeps cards centered */
+}
+
+.post-card {
+  max-width: 380px;   /* 👈 this is the key fix */
+  width: 100%;
+  margin: 0 auto;     /* centers cards in grid cells */
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 👈 keeps proportions */
+  object-fit: cover;
+  display: block;
+}
+
+
+.post-content {
+  padding: 15px;
+}
+
+.post-meta {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 8px;
+}
+
+.post-preview {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+/* Loading State Styles */
+.loading-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-posts h2 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.loading-posts p {
+  color: #7f8c8d;
+  font-size: 1rem;
+}

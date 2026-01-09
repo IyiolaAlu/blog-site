@@ -1,0 +1,206 @@
+/* Header.css */
+.header {
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 46, 0.95) 0%, 
+    rgba(33, 33, 60, 0.9) 100%),
+    url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10rem;
+}
+
+/* Full height for non-logged-in users */
+.header-full {
+  min-height: 100vh;
+}
+
+/* Compact height for logged-in users */
+.header-compact {
+  min-height: 300px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(99, 102, 241, 0.1) 0%, 
+    transparent 70%);
+  pointer-events: none;
+}
+
+.hero {
+  flex: 1;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  max-width: 800px;
+  text-align: center;
+  animation: fadeUp 1s ease-out;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Compact header content */
+.header-compact .header-content {
+  padding: 1.5rem;
+  border-radius: 16px;
+  max-width: 600px;
+}
+
+/* Typography for full version */
+.header-full .header-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-full .header-content h1:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #c7d2fe;
+  margin-bottom: 0.5rem;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.header-full .header-content h3 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-weight: 400;
+}
+
+/* Typography for compact version */
+.header-compact .welcome-text {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #c7d2fe;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-name {
+  color: #818cf8;
+  font-weight: 700;
+}
+
+.header-compact .text-muted {
+  color: #94a3b8 !important;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+.btn-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-compact {
+    min-height: 250px;
+  }
+  
+  .header-content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .header-full .header-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .header-compact .welcome-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-compact {
+    min-height: 220px;
+  }
+  
+  .header-full .header-content h1 {
+    font-size: 2rem;
+  }
+  
+  .header-full .header-content h1:first-of-type {
+    font-size: 1.25rem;
+  }
+  
+  .header-full .header-content h3 {
+    font-size: 1rem;
+  }
+  
+  .header-compact .welcome-text {
+    font-size: 1.25rem;
+  }
+  
+  .header-compact .d-flex.gap-3 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+  
+  .header-compact .btn {
+    width: 200px;
+  }
+}

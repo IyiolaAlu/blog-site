@@ -1,0 +1,146 @@
+/* Topics.css */
+
+/* Posts Grid */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* CardM Container */
+.cardM {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Responsive Styles */
+.card1, .card2 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover, .card2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.image-container {
+  flex: 0 0 auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.03);
+}
+
+.content-container {
+  flex: 1;
+  min-width: 0; /* Prevents flex item overflow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .image-container {
+    max-width: 450px;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .benefits-list p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card1, .card2 {
+    padding: 1.5rem !important;
+    margin: 1rem 0;
+  }
+  
+  .image-container {
+    max-width: 100%;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .content-container {
+    padding: 0 1rem;
+  }
+  
+  .benefits-list p {
+    font-size: 0.95rem;
+    justify-content: flex-start;
+  }
+  
+  .benefits-list i {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .card1, .card2 {
+    padding: 1rem !important;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .benefits-list p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .fa-square-check {
+    font-size: 0.9rem;
+  }
+  
+  .homepage-posts h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Text and spacing utilities */
+.benefits-list span {
+  display: inline-block;
+}
+
+/* Ensure proper spacing between sections */
+.topic {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .topic {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Loading spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
