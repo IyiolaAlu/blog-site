@@ -12,6 +12,7 @@ export const Signup = () => {
   const [loading, setloading] = useState(false);
   const [image, setImage] = useState(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [apiError, setApiError] = useState("");
   const navigate = useNavigate();
   const DEFAULT_AVATAR =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHEB-FmVpoxcfMWFBHLpHd7FjhRBXJ6aaLjw&s";
@@ -36,7 +37,7 @@ export const Signup = () => {
 
     onSubmit: async (values) => {
       if (values.password !== values.confirmPassword) {
-        alert("Passwords do not match!");
+        setApiError("Passwords do not match");
         return;
       }
 
@@ -68,9 +69,11 @@ export const Signup = () => {
         }
       } catch (error) {
         setloading(false);
-        alert(
-          error.response?.data?.message || "Signup failed. Please try again."
-        );
+        if (error.response?.data?.message) {
+          setApiError(error.response.data.message);
+        } else {
+          setApiError("Signup failed. Please try again.");
+        }
       }
     },
 
@@ -208,13 +211,23 @@ export const Signup = () => {
                   type="email"
                   name="email"
                   value={formik.values.email}
-                  onChange={formik.handleChange}
+                  onChange={(e) => {
+                    formik.handleChange(e);
+                    setApiError("");
+                  }}
                   onBlur={formik.handleBlur}
                   className="form-input"
                   placeholder="Enter your email"
                 />
+
                 {formik.touched.email && formik.errors.email && (
                   <small className="error-message">{formik.errors.email}</small>
+                )}
+
+                {apiError === "user already exists" && (
+                  <small className="error-message">
+                    This email is already registered. Please log in instead.
+                  </small>
                 )}
               </div>
 
