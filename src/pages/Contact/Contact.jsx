@@ -19,7 +19,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // show modal instead of alert
     setShowModal(true);
 
     setForm({ name: "", email: "", message: "" });
@@ -66,7 +65,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* MODAL */}
+   
       <Modal
         show={showModal}
         title="Message Sent 🎉"

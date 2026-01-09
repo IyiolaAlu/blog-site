@@ -12,7 +12,6 @@ const Header = () => {
             <Navbar />
             <header className={`header position-relative ${fullname ? 'header-compact' : 'header-full'}`}>
             
-            {/* Hero section - shows different content based on login status */}
             <div className='hero container d-flex flex-column align-items-center justify-content-center'>
                 <div className="header-content d-flex flex-column align-items-center justify-content-center">
                     

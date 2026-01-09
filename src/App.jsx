@@ -1,31 +1,3 @@
-// import React from "react";
-// import { Route, Routes } from "react-router-dom";
-// import { Signup } from "./pages/SignUp/SignUp";
-// import { Login } from "./pages/LoginPage/Login";
-// import Homepage from "./pages/HomepageU/Homepage";
-// import Profile from "./pages/ProfileU/Profile";
-// import AuthGuard from "./auth/AuthGuard";
-// import Landing from "./pages/Landingpage/Landing";
-// import EditProfile from "./pages/ProfileU/EditProfile";
-
-// const App = () => {
-
-//   return (
-//     <Routes>
-//       <Route path="/SignUp" element={<Signup />} />
-//       <Route path="/login" element={<Login />} />
-//       <Route path="/" element={<Landing />} />
-//       <Route element={<AuthGuard />}>
-//         <Route path="/homepage" element={<Homepage />} />
-//         <Route path="/profile" element={<Profile />} />
-//         <Route path="/editprofile" element={<EditProfile />} />
-//       </Route>
-//     </Routes>
-//   );
-// };
-
-// export default App;
-
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Signup } from "./pages/SignUp/SignUp";
@@ -38,8 +10,6 @@ import EditProfile from "./pages/ProfileU/EditProfile";
 import AdminGuard from "./auth/AdminGuard";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
-
-// 🆕 IMPORT POSTS PAGES
 import Posts from "./pages/Posts/Posts";
 import SinglePost from "./pages/Posts/SinglePost";
 import AdminDashboard from "./pages/Admin/AdminDashboard";

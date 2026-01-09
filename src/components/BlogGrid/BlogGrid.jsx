@@ -8,7 +8,7 @@ const BlogGrid = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get("http://localhost:5006/api/posts");
-      setPosts(res.data.slice(0, 3)); // 👈 ONLY 3 highlights
+      setPosts(res.data.slice(0, 3)); 
     };
 
     fetchPosts();
@@ -16,7 +16,6 @@ const BlogGrid = () => {
 
   return (
     <div className="container">
-      {/* YOUR EXISTING HERO / CONTENT */}
 
       <section className="home-posts">
         <h2 className="text-center pt-5 pb-3">Latest Articles</h2>
