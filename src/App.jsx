@@ -13,6 +13,8 @@ import Contact from "./pages/Contact/Contact";
 import Posts from "./pages/Posts/Posts";
 import SinglePost from "./pages/Posts/SinglePost";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
+import PrivacyPolicy from "./pages/TermsNPrivacy/PrivacyPolicy";
+import TermsOfService from "./pages/TermsNPrivacy/TermsOfService";
 
 const App = () => {
   return (
@@ -27,13 +29,13 @@ const App = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
 
-
       {/* PROTECTED ROUTES */}
       <Route element={<AuthGuard />}>
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
-
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
       </Route>
 
       {/* ADMIN (AUTH + ADMIN ONLY) */}
