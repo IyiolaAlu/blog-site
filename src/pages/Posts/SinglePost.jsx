@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbarr from "../../components/Navbar/Navbarr";
+import Footer from "../../components/Footer/Footer";
 import "./SinglePost.css";
 
 const SinglePost = () => {
@@ -112,6 +113,7 @@ const SinglePost = () => {
         )}
       </div>
     </div>
+    <Footer />
     </>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PostCard from "../../components/PostCard/PostCard";
 import Navbarr from "../../components/Navbar/Navbarr";
+import Footer from "../../components/Footer/Footer";
 import "./Posts.css";
 
 const Posts = () => {
@@ -46,6 +47,7 @@ const Posts = () => {
         ))}
       </div>
     </div>
+    <Footer />
     </>
     
   );
