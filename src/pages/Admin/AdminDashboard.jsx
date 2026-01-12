@@ -41,17 +41,20 @@ const AdminDashboard = () => {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this post?")) return;
-    try {
-      await axios.delete(`https://blog-siteb.onrender.com/posts/${id}`, {
+  try {
+    await axios.delete(
+      `https://blog-siteb.onrender.com/api/posts/${id}`,
+      {
         headers: { Authorization: `Bearer ${token}` },
-      });
-      setPosts(posts.filter((p) => p._id !== id));
-    } catch (error) {
-      console.error(error);
-      alert("Failed to delete post");
-    }
-  };
+      }
+    );
+
+    setPosts((prevPosts) => prevPosts.filter((p) => p._id !== id));
+  } catch (error) {
+    console.error("Delete failed:", error.response?.data || error.message);
+  }
+};
+
 
   const startEdit = (post) => {
     setEditingPost(post);
