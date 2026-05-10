@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./AdminDashboard.module.css"; // Updated import
+import styles from "./AdminDashboard.module.css"; 
 import Navbarr from "../../components/Navbar/Navbarr";
 
 const AdminDashboard = () => {
