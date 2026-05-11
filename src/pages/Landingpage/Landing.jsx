@@ -3,12 +3,6 @@ import "./Landing.css"
 import { Link } from 'react-router-dom'
 
 const Landing = () => {
-  const scrollToContent = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  };
 
   return (
     <div className='headerr position-relative'>
@@ -68,21 +62,12 @@ const Landing = () => {
           
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="scroll-indicator" onClick={scrollToContent}>
-          <span className="mb-2">Explore More</span>
-          <div className="scroll-arrow">
-            <i className="bi bi-chevron-down"></i>
-          </div>
-        </div>
+       
         <div className="legal-links">
-                      <Link to="/privacy-policy">Privacy Policy</Link>
-                      <Link to="/terms">Terms of Service</Link>
-        
-                      <a href="#" className="legal-link">
-                        Cookie Policy
-                      </a>
-                    </div>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms">Terms of Service</Link>
+          <a href="#" className="legal-link">Cookie Policy</a>
+        </div>
       </div>
     </div>
   )
