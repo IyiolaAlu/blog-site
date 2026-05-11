@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { updateName } from "../../redux/appSlice.js";
 import { useDispatch } from "react-redux";
 import "./SignUp.css";
@@ -25,6 +25,7 @@ export const Signup = () => {
       setImage(reader.result);
     };
   };
+  
 
   const formik = useFormik({
     initialValues: {
@@ -108,6 +109,7 @@ export const Signup = () => {
 
   return (
     <div className="signup-page">
+     
       {/* Success Modal */}
       {showSuccessModal && (
         <div className="signup-success-modal">
@@ -279,9 +281,18 @@ export const Signup = () => {
                 Sign in
               </a>
             </div>
+             <div className="legal-links">
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/terms">Terms of Service</Link>
+
+              <a href="#" className="legal-link">
+                Cookie Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>
+     
     </div>
   );
 };

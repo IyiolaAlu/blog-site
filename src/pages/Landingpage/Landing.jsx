@@ -36,6 +36,10 @@ const Landing = () => {
               <i className="bi bi-person-plus me-2"></i>
               Get Started
             </Link>
+            <Link to={'/posts'} className='landing-btn btn-signup'>
+              <i className="bi bi-person-plus me-2"></i>
+              Blog Posts
+            </Link>
           </div>
           
           {/* Features Section */}
@@ -71,7 +75,14 @@ const Landing = () => {
             <i className="bi bi-chevron-down"></i>
           </div>
         </div>
+        <div className="legal-links">
+                      <Link to="/privacy-policy">Privacy Policy</Link>
+                      <Link to="/terms">Terms of Service</Link>
         
+                      <a href="#" className="legal-link">
+                        Cookie Policy
+                      </a>
+                    </div>
       </div>
     </div>
   )

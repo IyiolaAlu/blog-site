@@ -22,6 +22,8 @@ const App = () => {
       <Route path="/SignUp" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Landing />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms" element={<TermsOfService />} />
 
       {/* PUBLIC POSTS */}
       <Route path="/posts" element={<Posts />} />
@@ -34,8 +36,6 @@ const App = () => {
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<TermsOfService />} />
       </Route>
 
       {/* ADMIN (AUTH + ADMIN ONLY) */}
