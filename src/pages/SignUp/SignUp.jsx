@@ -19,13 +19,14 @@ export const Signup = () => {
 
   const handleImage = (e) => {
     let picture = e.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(picture);
-    reader.onloadend = () => {
-      setImage(reader.result);
-    };
+    if (picture) {
+      const reader = new FileReader();
+      reader.readAsDataURL(picture);
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+    }
   };
-  
 
   const formik = useFormik({
     initialValues: {
@@ -49,19 +50,17 @@ export const Signup = () => {
           {
             profilePicture: image || DEFAULT_AVATAR,
             ...values,
-          }
+          },
         );
 
         if (response.data.status) {
           const { token, user } = response.data;
 
-          // Save user + token
           localStorage.setItem("token", token);
           localStorage.setItem("user", JSON.stringify(user));
 
           dispatch(updateName(user.fullname));
 
-          // Show modal instead of alert
           setShowSuccessModal(true);
           setloading(false);
 
@@ -91,12 +90,12 @@ export const Signup = () => {
         .min(8, "Password must be at least 8 characters")
         .matches(
           /[A-Z]+/,
-          "Password must contain at least one uppercase letter"
+          "Password must contain at least one uppercase letter",
         )
         .matches(/\d+/, "Password must contain at least one number")
         .matches(
           /[@$!%*#?&]+/,
-          "Password must contain at least one special character"
+          "Password must contain at least one special character",
         ),
       confirmPassword: yup.string().required("Confirm your password"),
     }),
@@ -109,7 +108,6 @@ export const Signup = () => {
 
   return (
     <div className="signup-page">
-     
       {/* Success Modal */}
       {showSuccessModal && (
         <div className="signup-success-modal">
@@ -160,7 +158,7 @@ export const Signup = () => {
                     alt="Profile preview"
                     className="profile-image"
                   />
-                  <span className="upload-text">Click to upload</span>
+                  <span className="upload-text">Click to upload photo</span>
                 </label>
                 <input
                   id="profileUpload"
@@ -221,11 +219,9 @@ export const Signup = () => {
                   className="form-input"
                   placeholder="Enter your email"
                 />
-
                 {formik.touched.email && formik.errors.email && (
                   <small className="error-message">{formik.errors.email}</small>
                 )}
-
                 {apiError === "user already exists" && (
                   <small className="error-message">
                     This email is already registered. Please log in instead.
@@ -277,22 +273,18 @@ export const Signup = () => {
 
             <div className="signin-link">
               Already have an account?{" "}
-              <a href="/login" className="link">
+              <Link to="/login" className="link">
                 Sign in
-              </a>
+              </Link>
             </div>
-             <div className="legal-links">
+           
+          </div>
+          <div className="legal-links">
               <Link to="/privacy-policy">Privacy Policy</Link>
               <Link to="/terms">Terms of Service</Link>
-
-              <a href="#" className="legal-link">
-                Cookie Policy
-              </a>
             </div>
-          </div>
         </div>
       </div>
-     
     </div>
   );
 };

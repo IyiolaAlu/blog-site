@@ -1,4 +1,4 @@
-/* Landing Page Styles */
+
 .headerr {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
@@ -13,7 +13,7 @@
     overflow-x: hidden;
 }
 
-/* Animated background overlay */
+
 .headerr::before {
     content: '';
     position: absolute;
@@ -288,7 +288,6 @@
     }
 }
 
-/* Responsive Design - Mobile Landscape */
 @media (max-width: 768px) {
     .heroo {
         padding: 1rem;
@@ -332,7 +331,7 @@
     }
 }
 
-/* Responsive Design - Mobile Portrait */
+
 @media (max-width: 576px) {
     .headerr {
         background-attachment: scroll;
@@ -382,7 +381,7 @@
     }
 }
 
-/* Extra Small Devices */
+
 @media (max-width: 375px) {
     .header-contentt {
         padding: 1.25rem;
@@ -436,7 +435,7 @@
     }
 }
 
-/* Accessibility - Reduced Motion */
+
 @media (prefers-reduced-motion: reduce) {
     .headerr::before,
     .landing-btn::before,
@@ -455,7 +454,7 @@
     }
 }
 
-/* Touch Device Optimizations */
+
 @media (hover: none) and (pointer: coarse) {
     .landing-btn:hover {
         transform: none;

@@ -59,15 +59,16 @@ const Landing = () => {
               <p className="feature-text">Developer Community</p>
             </div>
           </div>
+          <div className="legal-links">
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms">Terms of Service</Link>
+          
+        </div>
           
         </div>
         
        
-        <div className="legal-links">
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms">Terms of Service</Link>
-          <a href="#" className="legal-link">Cookie Policy</a>
-        </div>
+        
       </div>
     </div>
   )
