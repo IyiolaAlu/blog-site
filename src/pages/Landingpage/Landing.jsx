@@ -38,12 +38,12 @@ const Landing = () => {
           
           {/* Features Section */}
           <div className="features mt-5 pt-4">
-            <div className="feature-item">
+            {/* <div className="feature-item">
               <div className="feature-icon">
                 <i className="bi bi-code-slash"></i>
               </div>
               <p className="feature-text">React & Node.js Tutorials</p>
-            </div>
+            </div> */}
             
             <div className="feature-item">
               <div className="feature-icon">
